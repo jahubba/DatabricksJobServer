@@ -7,7 +7,7 @@ This uses [Databricks Connect](https://docs.azuredatabricks.net/user-guide/dev-t
 4. Copy the jars from the Databricks Connect library into the jars folder with Spark that was downloaded above.  The location can be found with the command below.
 ```databricks-connect get-jar-dir```
 5.  Within environment.conf file in Spark Job Server, add a new line within “context-settings” for the new custom context factory
-```context-factory = DBSparkContextFactory```
+```context-factory = jahubba.databricks.spark.jobserver.DatabricksSparkContextFactory```
 6.  Within settings.sh file in Spark Job Server, modify SPARK_HOME to point to the Spark directory from above.
 7.  Clone the DatabricksJobServer code [here](https://github.com/jahubba/DatabricksJobServer).
 8.  Compile the DatabricksJobServer code using sbt.
